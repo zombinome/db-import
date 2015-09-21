@@ -1,0 +1,19 @@
+{
+    "import": [
+        {
+            "table": "manufacturers",
+            "columns": ["name", "description"],
+            "rows": [
+                ["CAT", "Caterpillar"],
+                ["Komatsu", "Komatsu description"]
+            ]
+        },
+        {
+            "table": "parts",
+            "columns": [null, "name", "description", "logo"],
+            "fromFile": "../import-data/parts.csv",
+            "format": "csv",
+            "delimiter": ";"
+        }
+    ]
+}

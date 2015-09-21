@@ -1,0 +1,20 @@
+{
+    "provider": "mysql",
+    "connections": {
+        "mysql": {
+            "user": "root",
+            "password": "root",
+            "database": "Parts-DB"
+        }
+    },
+    "actions": {
+        "create-storage": {
+            "storage-definition": "cfg/storage.json",
+            "replace-existing": true
+        },
+        "import-data": {
+            "storage-definition": "cfg/storage.json",
+            "import-definition": "cfg/import.json"
+        }
+    }
+}

@@ -1,0 +1,142 @@
+{
+    "tables": {
+        "parts": {
+            "columns": {
+                "id":             {
+                    "type": "int",
+                    "autoincrement": true
+                },
+                "oemPartNumber":  {
+                    "type": "string",
+                    "length": 30
+                },
+                "manufacturerId": { "type": "int" },
+                "name":           {
+                    "type": "string",
+                    "length": 250
+                },
+                "description": {
+                    "type": "string",
+                    "length": 2048,
+                    "nullable": true,
+                    "default": null
+                },
+                "remanufactured": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "application": {
+                    "type": "string",
+                    "length": 250,
+                    "nullable": true,
+                    "default": null
+                }
+            },
+            "primaryKey": "id",
+            "foreignKeys": {
+                "pk" : {
+                    "type": "primary",
+                    "columns": ["id"]
+                }
+            },
+            "indexes": {
+                "idx_id": {
+                    "columns": ["id"]
+                }
+            }
+    },
+    "manufacturers": {
+        "columns": {
+            "id": {
+              "type": "int",
+              "autoincrement": true
+            },
+            "name": {
+              "type": "string",
+              "length": 200,
+              "nullable": true,
+              "default": null
+            },
+            "description": {
+              "type": "string",
+              "length": 2000,
+              "nullable": true,
+              "default": null
+            },
+            "logo": {
+              "type": "string",
+              "length": 250,
+              "nullable": true,
+              "default": null
+            }
+        },
+        "primaryKey": "id",
+        "keys": {},
+        "indexes": {}
+    },
+    "vehicles": {
+        "columns": {
+            "id": {
+                "type": "int",
+                "autoincrement": true
+            },
+            "manufacturerId": {
+                "type": "int",
+                "nullable": true,
+                "default": null
+            },
+            "model": {
+                "type": "string",
+                "length": 20
+            },
+            "vehicleType": {
+                "type": "string",
+                "length": 100,
+                "nullable" : true,
+                "default": null
+            },
+            "serialMask": {
+                "type": "string",
+                "length": 20
+            },
+            "description": {
+                "type": "string",
+                "length": 2000,
+                "nullable": true,
+                "default": null
+            }
+        },
+        "primaryKey": "id",
+        "keys": {},
+        "indexes": {}
+    },
+    "schemes": {
+        "columns": {
+            "id": {
+                "type": "int",
+                "autoincrement": true
+            },
+            "scheme": {
+                "type": "string",
+                "length": 250,
+                "nullable": true,
+                "default": null
+            },
+            "vehicleId": {
+                "type": "int",
+                "nullable": true,
+                "default": null
+            },
+            "subsystem": {
+                "type": "string",
+                "length": 50,
+                "nullable": true,
+                "default": null
+            }
+        },
+        "primaryKey": "id",
+        "keys": {},
+        "indexes": {}
+    }
+  }
+}
